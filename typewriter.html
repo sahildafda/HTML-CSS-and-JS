@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style type="text/css">
+        body {
+            background-color: rgb(71, 71, 71);
+            
+        }
+
+        .main {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
+        .content {
+            color: white;
+            font-size: 30px;
+            /* background-color: aquamarine; */
+            width: 10px;
+            top: 50%;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid rgba(255, 255, 255, 0.75);
+            animation: write 5s steps(40) 1s 1 normal both, cursoranimation 800ms steps(40) infinite normal;
+        }
+
+        @keyframes write {
+            from {
+                width: 0;
+            }
+            to {
+                /* === adjust this width as per word length === */
+
+                width: 9em; 
+            }
+        }
+
+        @keyframes cursoranimation {
+            from {
+
+                border-right-color: rgba(255, 255, 255, 0.75);
+            }
+
+            to {
+                border-right-color: transparent;
+            }
+        }
+    </style>
+    
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="main">
+        <p class="content">This is my typewriter..</p>
+    </div>
+</body>
+</html>
