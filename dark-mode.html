@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .selector {
+            width: 160px;
+            height: 80px;
+            border-radius: 100px;
+            background-color: rgb(63, 63, 63);
+            position: relative;
+            
+        }
+
+        .select {
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(90%);
+            width: 80px;
+            height: 80px;
+            background-color: rgb(0, 255, 242);
+            
+            transition: 0.5s;
+        }
+
+        #selector.active .select {
+            left: 80px;
+            background-color: red;    
+        }
+
+        #selector.active {
+            background-color: aliceblue;
+        }
+
+        body.active {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="selector" id="selector">
+        <i class="select"></i>
+    </div>    
+</body>
+
+    <script>
+        const selector = document.getElementById("selector")
+        const body = document.querySelector("body");
+        
+
+
+        selector.onclick = function() {
+            selector.classList.toggle("active");
+            body.classList.toggle("active");
+        }
+    </script>
+
+</html>
